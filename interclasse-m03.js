@@ -263,36 +263,6 @@ class ArenaConnect {
       arbitro.exibir();
     });
   }
-
-  // 6. Teste de Polimorfismo
-  testarPolimorfismo() {
-    console.log("\n=== TESTE DE POLIMORFISMO ===");
-
-    const pessoas = [
-      ...this.atletas,
-      ...this.arbitros
-    ];
-
-    if (pessoas.length === 0) {
-      return console.log("Nenhuma pessoa cadastrada.");
-    }
-
-    pessoas.forEach((pessoa) => {
-      if (pessoa instanceof Atleta) {
-        const turma = this.turmas.find(
-          (t) => t.id === pessoa.idTurma
-        );
-
-        const nomeTurma = turma
-          ? turma.nome
-          : "Turma não encontrada";
-
-        pessoa.exibir(nomeTurma);
-      } else {
-        pessoa.exibir();
-      }
-    });
-  }
 }
 
 // 7. Menu Principal
@@ -312,7 +282,6 @@ ARENA-CONNECT v2.0 - PBE1
 6. Listar Atletas
 7. Registrar Árbitro
 8. Listar Árbitros
-9. Testar Polimorfismo
 0. Sair
 ==============================`);
 
@@ -326,7 +295,6 @@ ARENA-CONNECT v2.0 - PBE1
     else if (op === "6") sistema.listaAtleta();
     else if (op === "7") sistema.adicionarArbitro();
     else if (op === "8") sistema.listarArbitros();
-    else if (op === "9") sistema.testarPolimorfismo();
     else if (op === "0") break;
     else console.log("Opção inválida!");
   }
